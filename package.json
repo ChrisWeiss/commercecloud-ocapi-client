@@ -19,6 +19,7 @@
     "lint:js": "./node_modules/.bin/eslint '**/*.js'",
     "lint:fix": "npm run lint:js -- --fix",
     "test": "NODE_ENV=test mocha --require babel-core/register $(find test/api -name '*.spec.js')",
+    "prebuild": "npm run lint",
     "build": "NODE_ENV=production ./node_modules/.bin/rollup -c",
     "prepack": "npm install && npm install --only=dev && npm run build"
   },
