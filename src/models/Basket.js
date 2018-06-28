@@ -27,6 +27,7 @@ import ProductItem from './ProductItem'
 import Shipment from './Shipment'
 import ShippingItem from './ShippingItem'
 import SimpleLink from './SimpleLink'
+import CustomAttributes from './CustomAttributes'
 
 /**
 * The Basket model module.
@@ -320,7 +321,13 @@ export default class Basket {
             if (data.hasOwnProperty('taxation')) {
                 obj['taxation'] = ApiClient.convertToType(data['taxation'], 'String')
             }
+            if (data.hasOwnProperty('_flash')) {
+                obj['_flash'] = data['_flash']
+            }
+
+            obj = CustomAttributes.constructFromObject(data, obj)
         }
+
         return obj
     }
 }
