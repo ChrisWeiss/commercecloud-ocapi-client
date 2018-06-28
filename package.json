@@ -12,15 +12,15 @@
     "dist"
   ],
   "scripts": {
-    "copyright:lint": "copyright 'src/**/*.js' 'bin/**/*.js' 'test/**/*.js'",
-    "copyright:fix": "copyright --fix --update 'src/*.js' 'src/**/*.js' 'test/*.js' 'test/**/*.js'",
-    "docs": "jsdoc -c .jsdocrc",
+    "copyright:lint": "./node_modules/.bin/copyright 'src/**/*.js' 'bin/**/*.js' 'test/**/*.js'",
+    "copyright:fix": "./node_modules/.bin/copyright --fix --update 'src/*.js' 'src/**/*.js' 'test/*.js' 'test/**/*.js'",
+    "docs": "./node_modules/.bin/jsdoc -c .jsdocrc",
     "lint": "npm run lint:js && npm run copyright:lint",
-    "lint:js": "eslint '**/*.js'",
+    "lint:js": "./node_modules/.bin/eslint '**/*.js'",
     "lint:fix": "npm run lint:js -- --fix",
     "test": "NODE_ENV=test mocha --require babel-core/register $(find test/api -name '*.spec.js')",
     "prebuild": "npm run lint",
-    "build": "NODE_ENV=production rollup -c",
+    "build": "NODE_ENV=production ./node_modules/.bin/rollup -c",
     "prepack": "npm run build"
   },
   "dependencies": {
