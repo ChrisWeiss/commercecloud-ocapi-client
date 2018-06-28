@@ -16,6 +16,7 @@
  *
  */
 import ApiClient from '../ApiClient'
+import CustomAttributes from './CustomAttributes'
 
 /**
 * The OrderAddress model module.
@@ -213,6 +214,8 @@ export default class OrderAddress {
             if (data.hasOwnProperty('title')) {
                 obj['title'] = ApiClient.convertToType(data['title'], 'String')
             }
+
+            obj = CustomAttributes.constructFromObject(data, obj)
         }
 
         return obj
