@@ -33,7 +33,6 @@ import CustomerProductListResult from '../models/CustomerProductListResult'
  * @version 17.8
  */
 export default class CustomersApi {
-
     /**
      * Constructs a new CustomersApi.
      * @alias module:api/CustomersApi
@@ -45,8 +44,6 @@ export default class CustomersApi {
         this.apiClient = apiClient || ApiClient.instance
     }
 
-
-
     /**
      * Invalidates the JWT provided in the header.
      * @param {Object} opts Optional parameters
@@ -56,7 +53,6 @@ export default class CustomersApi {
     deleteCustomersAuthWithHttpInfo(opts) {
         opts = opts || {}
         const postBody = null
-
 
         const pathParams = {}
         const queryParams = {}
@@ -70,11 +66,7 @@ export default class CustomersApi {
         const accepts = ['application/json', 'text/xml', 'application/xml']
         const returnType = null
 
-        return this.apiClient.callApi(
-            '/customers/auth', 'DELETE',
-            pathParams, queryParams, headerParams, formParams, postBody,
-            authNames, contentTypes, accepts, returnType
-        )
+        return this.apiClient.callApi('/customers/auth', 'DELETE', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType)
     }
 
     /**
@@ -84,12 +76,10 @@ export default class CustomersApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
     deleteCustomersAuth(opts) {
-        return this.deleteCustomersAuthWithHttpInfo(opts)
-            .then((response_and_data) => {
-                return response_and_data.data
-            })
+        return this.deleteCustomersAuthWithHttpInfo(opts).then((response_and_data) => {
+            return response_and_data.data
+        })
     }
-
 
     /**
      * Deletes a customer&#39;s address by address name.
@@ -110,7 +100,6 @@ export default class CustomersApi {
             throw new Error('Missing the required parameter \'addressName\' when calling deleteCustomersByIDAddressesByID')
         }
 
-
         const pathParams = {
             customer_id: customerId,
             address_name: addressName
@@ -125,9 +114,17 @@ export default class CustomersApi {
         const returnType = null
 
         return this.apiClient.callApi(
-            '/customers/{customer_id}/addresses/{address_name}', 'DELETE',
-            pathParams, queryParams, headerParams, formParams, postBody,
-            authNames, contentTypes, accepts, returnType
+            '/customers/{customer_id}/addresses/{address_name}',
+            'DELETE',
+            pathParams,
+            queryParams,
+            headerParams,
+            formParams,
+            postBody,
+            authNames,
+            contentTypes,
+            accepts,
+            returnType
         )
     }
 
@@ -138,12 +135,10 @@ export default class CustomersApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
     deleteCustomersByIDAddressesByID(customerId, addressName) {
-        return this.deleteCustomersByIDAddressesByIDWithHttpInfo(customerId, addressName)
-            .then((response_and_data) => {
-                return response_and_data.data
-            })
+        return this.deleteCustomersByIDAddressesByIDWithHttpInfo(customerId, addressName).then((response_and_data) => {
+            return response_and_data.data
+        })
     }
-
 
     /**
      * Deletes a customer&#39;s payment instrument.
@@ -164,7 +159,6 @@ export default class CustomersApi {
             throw new Error('Missing the required parameter \'paymentInstrumentId\' when calling deleteCustomersByIDPaymentInstrumentsByID')
         }
 
-
         const pathParams = {
             customer_id: customerId,
             payment_instrument_id: paymentInstrumentId
@@ -179,9 +173,17 @@ export default class CustomersApi {
         const returnType = null
 
         return this.apiClient.callApi(
-            '/customers/{customer_id}/payment_instruments/{payment_instrument_id}', 'DELETE',
-            pathParams, queryParams, headerParams, formParams, postBody,
-            authNames, contentTypes, accepts, returnType
+            '/customers/{customer_id}/payment_instruments/{payment_instrument_id}',
+            'DELETE',
+            pathParams,
+            queryParams,
+            headerParams,
+            formParams,
+            postBody,
+            authNames,
+            contentTypes,
+            accepts,
+            returnType
         )
     }
 
@@ -192,12 +194,10 @@ export default class CustomersApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
     deleteCustomersByIDPaymentInstrumentsByID(customerId, paymentInstrumentId) {
-        return this.deleteCustomersByIDPaymentInstrumentsByIDWithHttpInfo(customerId, paymentInstrumentId)
-            .then((response_and_data) => {
-                return response_and_data.data
-            })
+        return this.deleteCustomersByIDPaymentInstrumentsByIDWithHttpInfo(customerId, paymentInstrumentId).then((response_and_data) => {
+            return response_and_data.data
+        })
     }
-
 
     /**
      * Deletes a customer product list.
@@ -218,7 +218,6 @@ export default class CustomersApi {
             throw new Error('Missing the required parameter \'listId\' when calling deleteCustomersByIDProductListsByID')
         }
 
-
         const pathParams = {
             customer_id: customerId,
             list_id: listId
@@ -233,9 +232,17 @@ export default class CustomersApi {
         const returnType = null
 
         return this.apiClient.callApi(
-            '/customers/{customer_id}/product_lists/{list_id}', 'DELETE',
-            pathParams, queryParams, headerParams, formParams, postBody,
-            authNames, contentTypes, accepts, returnType
+            '/customers/{customer_id}/product_lists/{list_id}',
+            'DELETE',
+            pathParams,
+            queryParams,
+            headerParams,
+            formParams,
+            postBody,
+            authNames,
+            contentTypes,
+            accepts,
+            returnType
         )
     }
 
@@ -246,12 +253,10 @@ export default class CustomersApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
     deleteCustomersByIDProductListsByID(customerId, listId) {
-        return this.deleteCustomersByIDProductListsByIDWithHttpInfo(customerId, listId)
-            .then((response_and_data) => {
-                return response_and_data.data
-            })
+        return this.deleteCustomersByIDProductListsByIDWithHttpInfo(customerId, listId).then((response_and_data) => {
+            return response_and_data.data
+        })
     }
-
 
     /**
      * Removes an item from a customer product list.
@@ -278,7 +283,6 @@ export default class CustomersApi {
             throw new Error('Missing the required parameter \'itemId\' when calling deleteCustomersByIDProductListsByIDItemsByID')
         }
 
-
         const pathParams = {
             customer_id: customerId,
             list_id: listId,
@@ -294,9 +298,17 @@ export default class CustomersApi {
         const returnType = null
 
         return this.apiClient.callApi(
-            '/customers/{customer_id}/product_lists/{list_id}/items/{item_id}', 'DELETE',
-            pathParams, queryParams, headerParams, formParams, postBody,
-            authNames, contentTypes, accepts, returnType
+            '/customers/{customer_id}/product_lists/{list_id}/items/{item_id}',
+            'DELETE',
+            pathParams,
+            queryParams,
+            headerParams,
+            formParams,
+            postBody,
+            authNames,
+            contentTypes,
+            accepts,
+            returnType
         )
     }
 
@@ -308,12 +320,10 @@ export default class CustomersApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
     deleteCustomersByIDProductListsByIDItemsByID(customerId, listId, itemId) {
-        return this.deleteCustomersByIDProductListsByIDItemsByIDWithHttpInfo(customerId, listId, itemId)
-            .then((response_and_data) => {
-                return response_and_data.data
-            })
+        return this.deleteCustomersByIDProductListsByIDItemsByIDWithHttpInfo(customerId, listId, itemId).then((response_and_data) => {
+            return response_and_data.data
+        })
     }
-
 
     /**
      * Gets a customer.
@@ -331,7 +341,6 @@ export default class CustomersApi {
             throw new Error('Missing the required parameter \'customerId\' when calling getCustomersByID')
         }
 
-
         const pathParams = {
             customer_id: customerId
         }
@@ -346,11 +355,7 @@ export default class CustomersApi {
         const accepts = ['application/json', 'text/xml', 'application/xml']
         const returnType = Customer
 
-        return this.apiClient.callApi(
-            '/customers/{customer_id}', 'GET',
-            pathParams, queryParams, headerParams, formParams, postBody,
-            authNames, contentTypes, accepts, returnType
-        )
+        return this.apiClient.callApi('/customers/{customer_id}', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType)
     }
 
     /**
@@ -361,12 +366,10 @@ export default class CustomersApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/Customer}
      */
     getCustomersByID(customerId, opts) {
-        return this.getCustomersByIDWithHttpInfo(customerId, opts)
-            .then((response_and_data) => {
-                return response_and_data.data
-            })
+        return this.getCustomersByIDWithHttpInfo(customerId, opts).then((response_and_data) => {
+            return response_and_data.data
+        })
     }
-
 
     /**
      * Returns a sorted pageable list of all customer addresses in the address book. The default page
@@ -389,7 +392,6 @@ export default class CustomersApi {
             throw new Error('Missing the required parameter \'customerId\' when calling getCustomersByIDAddresses')
         }
 
-
         const pathParams = {
             customer_id: customerId
         }
@@ -405,11 +407,7 @@ export default class CustomersApi {
         const accepts = ['application/json', 'text/xml', 'application/xml']
         const returnType = CustomerAddressResult
 
-        return this.apiClient.callApi(
-            '/customers/{customer_id}/addresses', 'GET',
-            pathParams, queryParams, headerParams, formParams, postBody,
-            authNames, contentTypes, accepts, returnType
-        )
+        return this.apiClient.callApi('/customers/{customer_id}/addresses', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType)
     }
 
     /**
@@ -425,12 +423,10 @@ export default class CustomersApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/CustomerAddressResult}
      */
     getCustomersByIDAddresses(customerId, opts) {
-        return this.getCustomersByIDAddressesWithHttpInfo(customerId, opts)
-            .then((response_and_data) => {
-                return response_and_data.data
-            })
+        return this.getCustomersByIDAddressesWithHttpInfo(customerId, opts).then((response_and_data) => {
+            return response_and_data.data
+        })
     }
-
 
     /**
      * Retrieves a customer&#39;s address by address name.
@@ -451,7 +447,6 @@ export default class CustomersApi {
             throw new Error('Missing the required parameter \'addressName\' when calling getCustomersByIDAddressesByID')
         }
 
-
         const pathParams = {
             customer_id: customerId,
             address_name: addressName
@@ -466,9 +461,17 @@ export default class CustomersApi {
         const returnType = CustomerAddress
 
         return this.apiClient.callApi(
-            '/customers/{customer_id}/addresses/{address_name}', 'GET',
-            pathParams, queryParams, headerParams, formParams, postBody,
-            authNames, contentTypes, accepts, returnType
+            '/customers/{customer_id}/addresses/{address_name}',
+            'GET',
+            pathParams,
+            queryParams,
+            headerParams,
+            formParams,
+            postBody,
+            authNames,
+            contentTypes,
+            accepts,
+            returnType
         )
     }
 
@@ -479,12 +482,10 @@ export default class CustomersApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/CustomerAddress}
      */
     getCustomersByIDAddressesByID(customerId, addressName) {
-        return this.getCustomersByIDAddressesByIDWithHttpInfo(customerId, addressName)
-            .then((response_and_data) => {
-                return response_and_data.data
-            })
+        return this.getCustomersByIDAddressesByIDWithHttpInfo(customerId, addressName).then((response_and_data) => {
+            return response_and_data.data
+        })
     }
-
 
     /**
      * Gets the baskets of a customer.
@@ -499,7 +500,6 @@ export default class CustomersApi {
             throw new Error('Missing the required parameter \'customerId\' when calling getCustomersByIDBaskets')
         }
 
-
         const pathParams = {
             customer_id: customerId
         }
@@ -512,11 +512,7 @@ export default class CustomersApi {
         const accepts = ['application/json', 'text/xml', 'application/xml']
         const returnType = BasketsResult
 
-        return this.apiClient.callApi(
-            '/customers/{customer_id}/baskets', 'GET',
-            pathParams, queryParams, headerParams, formParams, postBody,
-            authNames, contentTypes, accepts, returnType
-        )
+        return this.apiClient.callApi('/customers/{customer_id}/baskets', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType)
     }
 
     /**
@@ -525,12 +521,10 @@ export default class CustomersApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/BasketsResult}
      */
     getCustomersByIDBaskets(customerId) {
-        return this.getCustomersByIDBasketsWithHttpInfo(customerId)
-            .then((response_and_data) => {
-                return response_and_data.data
-            })
+        return this.getCustomersByIDBasketsWithHttpInfo(customerId).then((response_and_data) => {
+            return response_and_data.data
+        })
     }
-
 
     /**
      * Returns a pageable list of all customer&#39;s orders. The default page size is 10.
@@ -553,7 +547,6 @@ export default class CustomersApi {
             throw new Error('Missing the required parameter \'customerId\' when calling getCustomersByIDOrders')
         }
 
-
         const pathParams = {
             customer_id: customerId
         }
@@ -573,11 +566,7 @@ export default class CustomersApi {
         const accepts = ['application/json', 'text/xml', 'application/xml']
         const returnType = CustomerOrderResult
 
-        return this.apiClient.callApi(
-            '/customers/{customer_id}/orders', 'GET',
-            pathParams, queryParams, headerParams, formParams, postBody,
-            authNames, contentTypes, accepts, returnType
-        )
+        return this.apiClient.callApi('/customers/{customer_id}/orders', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType)
     }
 
     /**
@@ -593,12 +582,10 @@ export default class CustomersApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/CustomerOrderResult}
      */
     getCustomersByIDOrders(customerId, opts) {
-        return this.getCustomersByIDOrdersWithHttpInfo(customerId, opts)
-            .then((response_and_data) => {
-                return response_and_data.data
-            })
+        return this.getCustomersByIDOrdersWithHttpInfo(customerId, opts).then((response_and_data) => {
+            return response_and_data.data
+        })
     }
-
 
     /**
      * Gets customer payment instruments for an customer.  Can be limited to a specific payment
@@ -619,7 +606,6 @@ export default class CustomersApi {
             throw new Error('Missing the required parameter \'customerId\' when calling getCustomersByIDPaymentInstruments')
         }
 
-
         const pathParams = {
             customer_id: customerId
         }
@@ -634,11 +620,7 @@ export default class CustomersApi {
         const accepts = ['application/json', 'text/xml', 'application/xml']
         const returnType = CustomerPaymentInstrumentResult
 
-        return this.apiClient.callApi(
-            '/customers/{customer_id}/payment_instruments', 'GET',
-            pathParams, queryParams, headerParams, formParams, postBody,
-            authNames, contentTypes, accepts, returnType
-        )
+        return this.apiClient.callApi('/customers/{customer_id}/payment_instruments', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType)
     }
 
     /**
@@ -652,12 +634,10 @@ export default class CustomersApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/CustomerPaymentInstrumentResult}
      */
     getCustomersByIDPaymentInstruments(customerId, opts) {
-        return this.getCustomersByIDPaymentInstrumentsWithHttpInfo(customerId, opts)
-            .then((response_and_data) => {
-                return response_and_data.data
-            })
+        return this.getCustomersByIDPaymentInstrumentsWithHttpInfo(customerId, opts).then((response_and_data) => {
+            return response_and_data.data
+        })
     }
-
 
     /**
      * Retrieves a customer&#39;s payment instrument by its id.
@@ -678,7 +658,6 @@ export default class CustomersApi {
             throw new Error('Missing the required parameter \'paymentInstrumentId\' when calling getCustomersByIDPaymentInstrumentsByID')
         }
 
-
         const pathParams = {
             customer_id: customerId,
             payment_instrument_id: paymentInstrumentId
@@ -693,9 +672,17 @@ export default class CustomersApi {
         const returnType = CustomerPaymentInstrument
 
         return this.apiClient.callApi(
-            '/customers/{customer_id}/payment_instruments/{payment_instrument_id}', 'GET',
-            pathParams, queryParams, headerParams, formParams, postBody,
-            authNames, contentTypes, accepts, returnType
+            '/customers/{customer_id}/payment_instruments/{payment_instrument_id}',
+            'GET',
+            pathParams,
+            queryParams,
+            headerParams,
+            formParams,
+            postBody,
+            authNames,
+            contentTypes,
+            accepts,
+            returnType
         )
     }
 
@@ -706,12 +693,10 @@ export default class CustomersApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/CustomerPaymentInstrument}
      */
     getCustomersByIDPaymentInstrumentsByID(customerId, paymentInstrumentId) {
-        return this.getCustomersByIDPaymentInstrumentsByIDWithHttpInfo(customerId, paymentInstrumentId)
-            .then((response_and_data) => {
-                return response_and_data.data
-            })
+        return this.getCustomersByIDPaymentInstrumentsByIDWithHttpInfo(customerId, paymentInstrumentId).then((response_and_data) => {
+            return response_and_data.data
+        })
     }
-
 
     /**
      * Returns all customer product lists.
@@ -729,7 +714,6 @@ export default class CustomersApi {
             throw new Error('Missing the required parameter \'customerId\' when calling getCustomersByIDProductLists')
         }
 
-
         const pathParams = {
             customer_id: customerId
         }
@@ -744,11 +728,7 @@ export default class CustomersApi {
         const accepts = ['application/json', 'text/xml', 'application/xml']
         const returnType = CustomerProductListResult
 
-        return this.apiClient.callApi(
-            '/customers/{customer_id}/product_lists', 'GET',
-            pathParams, queryParams, headerParams, formParams, postBody,
-            authNames, contentTypes, accepts, returnType
-        )
+        return this.apiClient.callApi('/customers/{customer_id}/product_lists', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType)
     }
 
     /**
@@ -759,12 +739,10 @@ export default class CustomersApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/CustomerProductListResult}
      */
     getCustomersByIDProductLists(customerId, opts) {
-        return this.getCustomersByIDProductListsWithHttpInfo(customerId, opts)
-            .then((response_and_data) => {
-                return response_and_data.data
-            })
+        return this.getCustomersByIDProductListsWithHttpInfo(customerId, opts).then((response_and_data) => {
+            return response_and_data.data
+        })
     }
-
 
     /**
      * Returns a customer product list of the given customer.
@@ -788,7 +766,6 @@ export default class CustomersApi {
             throw new Error('Missing the required parameter \'listId\' when calling getCustomersByIDProductListsByID')
         }
 
-
         const pathParams = {
             customer_id: customerId,
             list_id: listId
@@ -805,9 +782,17 @@ export default class CustomersApi {
         const returnType = CustomerProductList
 
         return this.apiClient.callApi(
-            '/customers/{customer_id}/product_lists/{list_id}', 'GET',
-            pathParams, queryParams, headerParams, formParams, postBody,
-            authNames, contentTypes, accepts, returnType
+            '/customers/{customer_id}/product_lists/{list_id}',
+            'GET',
+            pathParams,
+            queryParams,
+            headerParams,
+            formParams,
+            postBody,
+            authNames,
+            contentTypes,
+            accepts,
+            returnType
         )
     }
 
@@ -820,12 +805,10 @@ export default class CustomersApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/CustomerProductList}
      */
     getCustomersByIDProductListsByID(customerId, listId, opts) {
-        return this.getCustomersByIDProductListsByIDWithHttpInfo(customerId, listId, opts)
-            .then((response_and_data) => {
-                return response_and_data.data
-            })
+        return this.getCustomersByIDProductListsByIDWithHttpInfo(customerId, listId, opts).then((response_and_data) => {
+            return response_and_data.data
+        })
     }
-
 
     /**
      * Returns a pageable list of all items of a customer&#39;s product list. The default page size is 10.
@@ -851,7 +834,6 @@ export default class CustomersApi {
             throw new Error('Missing the required parameter \'listId\' when calling getCustomersByIDProductListsByIDItems')
         }
 
-
         const pathParams = {
             customer_id: customerId,
             list_id: listId
@@ -870,9 +852,17 @@ export default class CustomersApi {
         const returnType = CustomerProductListItemResult
 
         return this.apiClient.callApi(
-            '/customers/{customer_id}/product_lists/{list_id}/items', 'GET',
-            pathParams, queryParams, headerParams, formParams, postBody,
-            authNames, contentTypes, accepts, returnType
+            '/customers/{customer_id}/product_lists/{list_id}/items',
+            'GET',
+            pathParams,
+            queryParams,
+            headerParams,
+            formParams,
+            postBody,
+            authNames,
+            contentTypes,
+            accepts,
+            returnType
         )
     }
 
@@ -887,12 +877,10 @@ export default class CustomersApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/CustomerProductListItemResult}
      */
     getCustomersByIDProductListsByIDItems(customerId, listId, opts) {
-        return this.getCustomersByIDProductListsByIDItemsWithHttpInfo(customerId, listId, opts)
-            .then((response_and_data) => {
-                return response_and_data.data
-            })
+        return this.getCustomersByIDProductListsByIDItemsWithHttpInfo(customerId, listId, opts).then((response_and_data) => {
+            return response_and_data.data
+        })
     }
-
 
     /**
      * Returns an item of a customer product list.
@@ -922,7 +910,6 @@ export default class CustomersApi {
             throw new Error('Missing the required parameter \'itemId\' when calling getCustomersByIDProductListsByIDItemsByID')
         }
 
-
         const pathParams = {
             customer_id: customerId,
             list_id: listId,
@@ -940,9 +927,17 @@ export default class CustomersApi {
         const returnType = CustomerProductListItem
 
         return this.apiClient.callApi(
-            '/customers/{customer_id}/product_lists/{list_id}/items/{item_id}', 'GET',
-            pathParams, queryParams, headerParams, formParams, postBody,
-            authNames, contentTypes, accepts, returnType
+            '/customers/{customer_id}/product_lists/{list_id}/items/{item_id}',
+            'GET',
+            pathParams,
+            queryParams,
+            headerParams,
+            formParams,
+            postBody,
+            authNames,
+            contentTypes,
+            accepts,
+            returnType
         )
     }
 
@@ -956,12 +951,10 @@ export default class CustomersApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/CustomerProductListItem}
      */
     getCustomersByIDProductListsByIDItemsByID(customerId, listId, itemId, opts) {
-        return this.getCustomersByIDProductListsByIDItemsByIDWithHttpInfo(customerId, listId, itemId, opts)
-            .then((response_and_data) => {
-                return response_and_data.data
-            })
+        return this.getCustomersByIDProductListsByIDItemsByIDWithHttpInfo(customerId, listId, itemId, opts).then((response_and_data) => {
+            return response_and_data.data
+        })
     }
-
 
     /**
      * Updates a customer.
@@ -982,7 +975,6 @@ export default class CustomersApi {
             throw new Error('Missing the required parameter \'body\' when calling patchCustomersByID')
         }
 
-
         const pathParams = {
             customer_id: customerId
         }
@@ -995,11 +987,7 @@ export default class CustomersApi {
         const accepts = ['application/json', 'text/xml', 'application/xml']
         const returnType = Customer
 
-        return this.apiClient.callApi(
-            '/customers/{customer_id}', 'PATCH',
-            pathParams, queryParams, headerParams, formParams, postBody,
-            authNames, contentTypes, accepts, returnType
-        )
+        return this.apiClient.callApi('/customers/{customer_id}', 'PATCH', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType)
     }
 
     /**
@@ -1009,12 +997,10 @@ export default class CustomersApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/Customer}
      */
     patchCustomersByID(customerId, body) {
-        return this.patchCustomersByIDWithHttpInfo(customerId, body)
-            .then((response_and_data) => {
-                return response_and_data.data
-            })
+        return this.patchCustomersByIDWithHttpInfo(customerId, body).then((response_and_data) => {
+            return response_and_data.data
+        })
     }
-
 
     /**
      * Updates a customer&#39;s address by address name.
@@ -1041,7 +1027,6 @@ export default class CustomersApi {
             throw new Error('Missing the required parameter \'body\' when calling patchCustomersByIDAddressesByID')
         }
 
-
         const pathParams = {
             customer_id: customerId,
             address_name: addressName
@@ -1056,9 +1041,17 @@ export default class CustomersApi {
         const returnType = CustomerAddress
 
         return this.apiClient.callApi(
-            '/customers/{customer_id}/addresses/{address_name}', 'PATCH',
-            pathParams, queryParams, headerParams, formParams, postBody,
-            authNames, contentTypes, accepts, returnType
+            '/customers/{customer_id}/addresses/{address_name}',
+            'PATCH',
+            pathParams,
+            queryParams,
+            headerParams,
+            formParams,
+            postBody,
+            authNames,
+            contentTypes,
+            accepts,
+            returnType
         )
     }
 
@@ -1070,12 +1063,10 @@ export default class CustomersApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/CustomerAddress}
      */
     patchCustomersByIDAddressesByID(customerId, addressName, body) {
-        return this.patchCustomersByIDAddressesByIDWithHttpInfo(customerId, addressName, body)
-            .then((response_and_data) => {
-                return response_and_data.data
-            })
+        return this.patchCustomersByIDAddressesByIDWithHttpInfo(customerId, addressName, body).then((response_and_data) => {
+            return response_and_data.data
+        })
     }
-
 
     /**
      * Changes a product list. Changeable properties are the name, description and if the list is public.
@@ -1102,7 +1093,6 @@ export default class CustomersApi {
             throw new Error('Missing the required parameter \'listId\' when calling patchCustomersByIDProductListsByID')
         }
 
-
         const pathParams = {
             customer_id: customerId,
             list_id: listId
@@ -1117,9 +1107,17 @@ export default class CustomersApi {
         const returnType = CustomerProductList
 
         return this.apiClient.callApi(
-            '/customers/{customer_id}/product_lists/{list_id}', 'PATCH',
-            pathParams, queryParams, headerParams, formParams, postBody,
-            authNames, contentTypes, accepts, returnType
+            '/customers/{customer_id}/product_lists/{list_id}',
+            'PATCH',
+            pathParams,
+            queryParams,
+            headerParams,
+            formParams,
+            postBody,
+            authNames,
+            contentTypes,
+            accepts,
+            returnType
         )
     }
 
@@ -1131,12 +1129,10 @@ export default class CustomersApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/CustomerProductList}
      */
     patchCustomersByIDProductListsByID(body, customerId, listId) {
-        return this.patchCustomersByIDProductListsByIDWithHttpInfo(body, customerId, listId)
-            .then((response_and_data) => {
-                return response_and_data.data
-            })
+        return this.patchCustomersByIDProductListsByIDWithHttpInfo(body, customerId, listId).then((response_and_data) => {
+            return response_and_data.data
+        })
     }
-
 
     /**
      * Updates an item of a customer&#39;s product list.  Considered values from the request body are:
@@ -1175,7 +1171,6 @@ export default class CustomersApi {
             throw new Error('Missing the required parameter \'body\' when calling patchCustomersByIDProductListsByIDItemsByID')
         }
 
-
         const pathParams = {
             customer_id: customerId,
             list_id: listId,
@@ -1191,9 +1186,17 @@ export default class CustomersApi {
         const returnType = CustomerProductListItem
 
         return this.apiClient.callApi(
-            '/customers/{customer_id}/product_lists/{list_id}/items/{item_id}', 'PATCH',
-            pathParams, queryParams, headerParams, formParams, postBody,
-            authNames, contentTypes, accepts, returnType
+            '/customers/{customer_id}/product_lists/{list_id}/items/{item_id}',
+            'PATCH',
+            pathParams,
+            queryParams,
+            headerParams,
+            formParams,
+            postBody,
+            authNames,
+            contentTypes,
+            accepts,
+            returnType
         )
     }
 
@@ -1212,12 +1215,10 @@ export default class CustomersApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/CustomerProductListItem}
      */
     patchCustomersByIDProductListsByIDItemsByID(customerId, listId, itemId, body) {
-        return this.patchCustomersByIDProductListsByIDItemsByIDWithHttpInfo(customerId, listId, itemId, body)
-            .then((response_and_data) => {
-                return response_and_data.data
-            })
+        return this.patchCustomersByIDProductListsByIDItemsByIDWithHttpInfo(customerId, listId, itemId, body).then((response_and_data) => {
+            return response_and_data.data
+        })
     }
-
 
     /**
      * Registers a customer.  The mandatory data are the credentials and profile last name and email.
@@ -1234,7 +1235,6 @@ export default class CustomersApi {
             throw new Error('Missing the required parameter \'body\' when calling postCustomers')
         }
 
-
         const pathParams = {}
         const queryParams = {}
         const headerParams = {}
@@ -1245,11 +1245,7 @@ export default class CustomersApi {
         const accepts = ['application/json', 'text/xml', 'application/xml']
         const returnType = Customer
 
-        return this.apiClient.callApi(
-            '/customers', 'POST',
-            pathParams, queryParams, headerParams, formParams, postBody,
-            authNames, contentTypes, accepts, returnType
-        )
+        return this.apiClient.callApi('/customers', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType)
     }
 
     /**
@@ -1260,12 +1256,10 @@ export default class CustomersApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/Customer}
      */
     postCustomers(body) {
-        return this.postCustomersWithHttpInfo(body)
-            .then((response_and_data) => {
-                return response_and_data.data
-            })
+        return this.postCustomersWithHttpInfo(body).then((response_and_data) => {
+            return response_and_data.data
+        })
     }
-
 
     /**
      * Obtains a new JWT (JSON Web Token) for a guest or registered  customer.
@@ -1305,7 +1299,6 @@ export default class CustomersApi {
             throw new Error('Missing the required parameter \'body\' when calling postCustomersAuth')
         }
 
-
         const pathParams = {}
         const queryParams = {}
         const headerParams = {
@@ -1318,11 +1311,7 @@ export default class CustomersApi {
         const accepts = ['application/json', 'text/xml', 'application/xml']
         const returnType = Customer
 
-        return this.apiClient.callApi(
-            '/customers/auth', 'POST',
-            pathParams, queryParams, headerParams, formParams, postBody,
-            authNames, contentTypes, accepts, returnType
-        ).then((response) => {
+        return this.apiClient.callApi('/customers/auth', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType).then((response) => {
             this.apiClient.defaultHeaders.authorization = response.response.header.authorization
             return response
         })
@@ -1363,12 +1352,10 @@ export default class CustomersApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/Customer}
      */
     postCustomersAuth(body, opts) {
-        return this.postCustomersAuthWithHttpInfo(body, opts)
-            .then((response_and_data) => {
-                return response_and_data.data
-            })
+        return this.postCustomersAuthWithHttpInfo(body, opts).then((response_and_data) => {
+            return response_and_data.data
+        })
     }
-
 
     /**
      * Creates a new address with the given name for the given customer.
@@ -1389,7 +1376,6 @@ export default class CustomersApi {
             throw new Error('Missing the required parameter \'body\' when calling postCustomersByIDAddresses')
         }
 
-
         const pathParams = {
             customer_id: customerId
         }
@@ -1402,11 +1388,7 @@ export default class CustomersApi {
         const accepts = ['application/json', 'text/xml', 'application/xml']
         const returnType = CustomerAddress
 
-        return this.apiClient.callApi(
-            '/customers/{customer_id}/addresses', 'POST',
-            pathParams, queryParams, headerParams, formParams, postBody,
-            authNames, contentTypes, accepts, returnType
-        )
+        return this.apiClient.callApi('/customers/{customer_id}/addresses', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType)
     }
 
     /**
@@ -1416,12 +1398,10 @@ export default class CustomersApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/CustomerAddress}
      */
     postCustomersByIDAddresses(customerId, body) {
-        return this.postCustomersByIDAddressesWithHttpInfo(customerId, body)
-            .then((response_and_data) => {
-                return response_and_data.data
-            })
+        return this.postCustomersByIDAddressesWithHttpInfo(customerId, body).then((response_and_data) => {
+            return response_and_data.data
+        })
     }
-
 
     /**
      *   Obtains a new agent on behalf token for a registered customer. Token is returned as a HTTP Authorization:Bearer
@@ -1446,7 +1426,6 @@ export default class CustomersApi {
             throw new Error('Missing the required parameter \'customerId\' when calling postCustomersByIDAuth')
         }
 
-
         const pathParams = {
             customer_id: customerId
         }
@@ -1459,11 +1438,7 @@ export default class CustomersApi {
         const accepts = ['application/json', 'text/xml', 'application/xml']
         const returnType = Customer
 
-        return this.apiClient.callApi(
-            '/customers/{customer_id}/auth', 'POST',
-            pathParams, queryParams, headerParams, formParams, postBody,
-            authNames, contentTypes, accepts, returnType
-        )
+        return this.apiClient.callApi('/customers/{customer_id}/auth', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType)
     }
 
     /**
@@ -1482,12 +1457,10 @@ export default class CustomersApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/Customer}
      */
     postCustomersByIDAuth(customerId) {
-        return this.postCustomersByIDAuthWithHttpInfo(customerId)
-            .then((response_and_data) => {
-                return response_and_data.data
-            })
+        return this.postCustomersByIDAuthWithHttpInfo(customerId).then((response_and_data) => {
+            return response_and_data.data
+        })
     }
-
 
     /**
      * Starts a password reset process. A password reset token is generated and passed together with the customer
@@ -1505,7 +1478,6 @@ export default class CustomersApi {
             throw new Error('Missing the required parameter \'customerId\' when calling postCustomersByIDPasswordReset')
         }
 
-
         const pathParams = {
             customer_id: customerId
         }
@@ -1518,11 +1490,7 @@ export default class CustomersApi {
         const accepts = ['application/json', 'text/xml', 'application/xml']
         const returnType = null
 
-        return this.apiClient.callApi(
-            '/customers/{customer_id}/password_reset', 'POST',
-            pathParams, queryParams, headerParams, formParams, postBody,
-            authNames, contentTypes, accepts, returnType
-        )
+        return this.apiClient.callApi('/customers/{customer_id}/password_reset', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType)
     }
 
     /**
@@ -1534,12 +1502,10 @@ export default class CustomersApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
     postCustomersByIDPasswordReset(customerId) {
-        return this.postCustomersByIDPasswordResetWithHttpInfo(customerId)
-            .then((response_and_data) => {
-                return response_and_data.data
-            })
+        return this.postCustomersByIDPasswordResetWithHttpInfo(customerId).then((response_and_data) => {
+            return response_and_data.data
+        })
     }
-
 
     /**
      * Adds a payment instrument to a customer information.
@@ -1560,7 +1526,6 @@ export default class CustomersApi {
             throw new Error('Missing the required parameter \'body\' when calling postCustomersByIDPaymentInstruments')
         }
 
-
         const pathParams = {
             customer_id: customerId
         }
@@ -1573,11 +1538,7 @@ export default class CustomersApi {
         const accepts = ['application/json', 'text/xml', 'application/xml']
         const returnType = CustomerPaymentInstrument
 
-        return this.apiClient.callApi(
-            '/customers/{customer_id}/payment_instruments', 'POST',
-            pathParams, queryParams, headerParams, formParams, postBody,
-            authNames, contentTypes, accepts, returnType
-        )
+        return this.apiClient.callApi('/customers/{customer_id}/payment_instruments', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType)
     }
 
     /**
@@ -1587,12 +1548,10 @@ export default class CustomersApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/CustomerPaymentInstrument}
      */
     postCustomersByIDPaymentInstruments(customerId, body) {
-        return this.postCustomersByIDPaymentInstrumentsWithHttpInfo(customerId, body)
-            .then((response_and_data) => {
-                return response_and_data.data
-            })
+        return this.postCustomersByIDPaymentInstrumentsWithHttpInfo(customerId, body).then((response_and_data) => {
+            return response_and_data.data
+        })
     }
-
 
     /**
      * Creates a customer product list.
@@ -1613,7 +1572,6 @@ export default class CustomersApi {
             throw new Error('Missing the required parameter \'customerId\' when calling postCustomersByIDProductLists')
         }
 
-
         const pathParams = {
             customer_id: customerId
         }
@@ -1626,11 +1584,7 @@ export default class CustomersApi {
         const accepts = ['application/json', 'text/xml', 'application/xml']
         const returnType = CustomerProductList
 
-        return this.apiClient.callApi(
-            '/customers/{customer_id}/product_lists', 'POST',
-            pathParams, queryParams, headerParams, formParams, postBody,
-            authNames, contentTypes, accepts, returnType
-        )
+        return this.apiClient.callApi('/customers/{customer_id}/product_lists', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType)
     }
 
     /**
@@ -1640,12 +1594,10 @@ export default class CustomersApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/CustomerProductList}
      */
     postCustomersByIDProductLists(customerId, body) {
-        return this.postCustomersByIDProductListsWithHttpInfo(body, customerId)
-            .then((response_and_data) => {
-                return response_and_data.data
-            })
+        return this.postCustomersByIDProductListsWithHttpInfo(body, customerId).then((response_and_data) => {
+            return response_and_data.data
+        })
     }
-
 
     /**
      * Adds an item to the customer&#39;s product list.
@@ -1683,7 +1635,6 @@ export default class CustomersApi {
             throw new Error('Missing the required parameter \'body\' when calling postCustomersByIDProductListsByIDItems')
         }
 
-
         const pathParams = {
             customer_id: customerId,
             list_id: listId
@@ -1698,9 +1649,17 @@ export default class CustomersApi {
         const returnType = CustomerProductListItem
 
         return this.apiClient.callApi(
-            '/customers/{customer_id}/product_lists/{list_id}/items', 'POST',
-            pathParams, queryParams, headerParams, formParams, postBody,
-            authNames, contentTypes, accepts, returnType
+            '/customers/{customer_id}/product_lists/{list_id}/items',
+            'POST',
+            pathParams,
+            queryParams,
+            headerParams,
+            formParams,
+            postBody,
+            authNames,
+            contentTypes,
+            accepts,
+            returnType
         )
     }
 
@@ -1722,12 +1681,10 @@ export default class CustomersApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/CustomerProductListItem}
      */
     postCustomersByIDProductListsByIDItems(customerId, listId, body) {
-        return this.postCustomersByIDProductListsByIDItemsWithHttpInfo(customerId, listId, body)
-            .then((response_and_data) => {
-                return response_and_data.data
-            })
+        return this.postCustomersByIDProductListsByIDItemsWithHttpInfo(customerId, listId, body).then((response_and_data) => {
+            return response_and_data.data
+        })
     }
-
 
     /**
      * First the beforePOST hook is called. After that the validation of the
@@ -1750,7 +1707,6 @@ export default class CustomersApi {
             throw new Error('Missing the required parameter \'body\' when calling postCustomersPasswordReset')
         }
 
-
         const pathParams = {}
         const queryParams = {}
         const headerParams = {}
@@ -1761,11 +1717,7 @@ export default class CustomersApi {
         const accepts = ['application/json', 'text/xml', 'application/xml']
         const returnType = null
 
-        return this.apiClient.callApi(
-            '/customers/password_reset', 'POST',
-            pathParams, queryParams, headerParams, formParams, postBody,
-            authNames, contentTypes, accepts, returnType
-        )
+        return this.apiClient.callApi('/customers/password_reset', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType)
     }
 
     /**
@@ -1781,12 +1733,10 @@ export default class CustomersApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
     postCustomersPasswordReset(body) {
-        return this.postCustomersPasswordResetWithHttpInfo(body)
-            .then((response_and_data) => {
-                return response_and_data.data
-            })
+        return this.postCustomersPasswordResetWithHttpInfo(body).then((response_and_data) => {
+            return response_and_data.data
+        })
     }
-
 
     /**
      * Updates the customer&#39;s password.
@@ -1807,11 +1757,12 @@ export default class CustomersApi {
             throw new Error('Missing the required parameter \'body\' when calling putCustomersByIDPassword')
         }
 
-
         const pathParams = {
             customer_id: customerId
         }
-        const queryParams = {}
+        const queryParams = {
+            method: 'PUT'
+        }
         const headerParams = {}
         const formParams = {}
 
@@ -1820,11 +1771,7 @@ export default class CustomersApi {
         const accepts = ['application/json', 'text/xml', 'application/xml']
         const returnType = null
 
-        return this.apiClient.callApi(
-            '/customers/{customer_id}/password', 'PUT',
-            pathParams, queryParams, headerParams, formParams, postBody,
-            authNames, contentTypes, accepts, returnType
-        )
+        return this.apiClient.callApi('/customers/{customer_id}/password', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType)
     }
 
     /**
@@ -1834,11 +1781,8 @@ export default class CustomersApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
     putCustomersByIDPassword(customerId, body) {
-        return this.putCustomersByIDPasswordWithHttpInfo(customerId, body)
-            .then((response_and_data) => {
-                return response_and_data.data
-            })
+        return this.putCustomersByIDPasswordWithHttpInfo(customerId, body).then((response_and_data) => {
+            return response_and_data.data
+        })
     }
-
-
 }

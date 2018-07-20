@@ -26,7 +26,6 @@ import ShippingMethodResult from '../models/ShippingMethodResult'
  * @version 17.8
  */
 export default class BasketsApi {
-
     /**
      * Constructs a new BasketsApi.
      * @alias module:api/BasketsApi
@@ -63,11 +62,7 @@ export default class BasketsApi {
         const accepts = ['application/json', 'text/xml', 'application/xml']
         const returnType = null
 
-        return this.apiClient.callApi(
-            '/baskets/{basket_id}', 'DELETE',
-            pathParams, queryParams, headerParams, formParams, postBody,
-            authNames, contentTypes, accepts, returnType
-        )
+        return this.apiClient.callApi('/baskets/{basket_id}', 'DELETE', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType)
     }
 
     /**
@@ -76,12 +71,10 @@ export default class BasketsApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
     deleteBasketsByID(basketId) {
-        return this.deleteBasketsByIDWithHttpInfo(basketId)
-            .then((response_and_data) => {
-                return response_and_data.data
-            })
+        return this.deleteBasketsByIDWithHttpInfo(basketId).then((response_and_data) => {
+            return response_and_data.data
+        })
     }
-
 
     /**
      * Removes a coupon from the basket.
@@ -102,7 +95,6 @@ export default class BasketsApi {
             throw new Error('Missing the required parameter \'couponItemId\' when calling deleteBasketsByIDCouponsByID')
         }
 
-
         const pathParams = {
             basket_id: basketId,
             coupon_item_id: couponItemId
@@ -117,9 +109,17 @@ export default class BasketsApi {
         const returnType = Basket
 
         return this.apiClient.callApi(
-            '/baskets/{basket_id}/coupons/{coupon_item_id}', 'DELETE',
-            pathParams, queryParams, headerParams, formParams, postBody,
-            authNames, contentTypes, accepts, returnType
+            '/baskets/{basket_id}/coupons/{coupon_item_id}',
+            'DELETE',
+            pathParams,
+            queryParams,
+            headerParams,
+            formParams,
+            postBody,
+            authNames,
+            contentTypes,
+            accepts,
+            returnType
         )
     }
 
@@ -130,12 +130,10 @@ export default class BasketsApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/Basket}
      */
     deleteBasketsByIDCouponsByID(basketId, couponItemId) {
-        return this.deleteBasketsByIDCouponsByIDWithHttpInfo(basketId, couponItemId)
-            .then((response_and_data) => {
-                return response_and_data.data
-            })
+        return this.deleteBasketsByIDCouponsByIDWithHttpInfo(basketId, couponItemId).then((response_and_data) => {
+            return response_and_data.data
+        })
     }
-
 
     /**
      * Removes a product item from the basket.
@@ -156,7 +154,6 @@ export default class BasketsApi {
             throw new Error('Missing the required parameter \'itemId\' when calling deleteBasketsByIDItemsByID')
         }
 
-
         const pathParams = {
             basket_id: basketId,
             item_id: itemId
@@ -170,11 +167,7 @@ export default class BasketsApi {
         const accepts = ['application/json', 'text/xml', 'application/xml']
         const returnType = Basket
 
-        return this.apiClient.callApi(
-            '/baskets/{basket_id}/items/{item_id}', 'DELETE',
-            pathParams, queryParams, headerParams, formParams, postBody,
-            authNames, contentTypes, accepts, returnType
-        )
+        return this.apiClient.callApi('/baskets/{basket_id}/items/{item_id}', 'DELETE', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType)
     }
 
     /**
@@ -184,12 +177,10 @@ export default class BasketsApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/Basket}
      */
     deleteBasketsByIDItemsByID(basketId, itemId) {
-        return this.deleteBasketsByIDItemsByIDWithHttpInfo(basketId, itemId)
-            .then((response_and_data) => {
-                return response_and_data.data
-            })
+        return this.deleteBasketsByIDItemsByIDWithHttpInfo(basketId, itemId).then((response_and_data) => {
+            return response_and_data.data
+        })
     }
-
 
     /**
      * Removes a basket note.
@@ -210,7 +201,6 @@ export default class BasketsApi {
             throw new Error('Missing the required parameter \'noteId\' when calling deleteBasketsByIDNotesByID')
         }
 
-
         const pathParams = {
             basket_id: basketId,
             note_id: noteId
@@ -224,11 +214,7 @@ export default class BasketsApi {
         const accepts = ['application/json', 'text/xml', 'application/xml']
         const returnType = Basket
 
-        return this.apiClient.callApi(
-            '/baskets/{basket_id}/notes/{note_id}', 'DELETE',
-            pathParams, queryParams, headerParams, formParams, postBody,
-            authNames, contentTypes, accepts, returnType
-        )
+        return this.apiClient.callApi('/baskets/{basket_id}/notes/{note_id}', 'DELETE', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType)
     }
 
     /**
@@ -238,12 +224,10 @@ export default class BasketsApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/Basket}
      */
     deleteBasketsByIDNotesByID(basketId, noteId) {
-        return this.deleteBasketsByIDNotesByIDWithHttpInfo(basketId, noteId)
-            .then((response_and_data) => {
-                return response_and_data.data
-            })
+        return this.deleteBasketsByIDNotesByIDWithHttpInfo(basketId, noteId).then((response_and_data) => {
+            return response_and_data.data
+        })
     }
-
 
     /**
      * Removes a payment instrument of a basket.
@@ -264,7 +248,6 @@ export default class BasketsApi {
             throw new Error('Missing the required parameter \'paymentInstrumentId\' when calling deleteBasketsByIDPaymentInstrumentsByID')
         }
 
-
         const pathParams = {
             basket_id: basketId,
             payment_instrument_id: paymentInstrumentId
@@ -279,9 +262,17 @@ export default class BasketsApi {
         const returnType = Basket
 
         return this.apiClient.callApi(
-            '/baskets/{basket_id}/payment_instruments/{payment_instrument_id}', 'DELETE',
-            pathParams, queryParams, headerParams, formParams, postBody,
-            authNames, contentTypes, accepts, returnType
+            '/baskets/{basket_id}/payment_instruments/{payment_instrument_id}',
+            'DELETE',
+            pathParams,
+            queryParams,
+            headerParams,
+            formParams,
+            postBody,
+            authNames,
+            contentTypes,
+            accepts,
+            returnType
         )
     }
 
@@ -292,12 +283,10 @@ export default class BasketsApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/Basket}
      */
     deleteBasketsByIDPaymentInstrumentsByID(basketId, paymentInstrumentId) {
-        return this.deleteBasketsByIDPaymentInstrumentsByIDWithHttpInfo(basketId, paymentInstrumentId)
-            .then((response_and_data) => {
-                return response_and_data.data
-            })
+        return this.deleteBasketsByIDPaymentInstrumentsByIDWithHttpInfo(basketId, paymentInstrumentId).then((response_and_data) => {
+            return response_and_data.data
+        })
     }
-
 
     /**
      * Removes a specified shipment and all associated product, gift certificate,  shipping and price adjustment line items from a basket.  It is not permissible to remove the default shipment.
@@ -318,7 +307,6 @@ export default class BasketsApi {
             throw new Error('Missing the required parameter \'shipmentId\' when calling deleteBasketsByIDShipmentsByID')
         }
 
-
         const pathParams = {
             basket_id: basketId,
             shipment_id: shipmentId
@@ -333,9 +321,17 @@ export default class BasketsApi {
         const returnType = Basket
 
         return this.apiClient.callApi(
-            '/baskets/{basket_id}/shipments/{shipment_id}', 'DELETE',
-            pathParams, queryParams, headerParams, formParams, postBody,
-            authNames, contentTypes, accepts, returnType
+            '/baskets/{basket_id}/shipments/{shipment_id}',
+            'DELETE',
+            pathParams,
+            queryParams,
+            headerParams,
+            formParams,
+            postBody,
+            authNames,
+            contentTypes,
+            accepts,
+            returnType
         )
     }
 
@@ -346,12 +342,10 @@ export default class BasketsApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/Basket}
      */
     deleteBasketsByIDShipmentsByID(basketId, shipmentId) {
-        return this.deleteBasketsByIDShipmentsByIDWithHttpInfo(basketId, shipmentId)
-            .then((response_and_data) => {
-                return response_and_data.data
-            })
+        return this.deleteBasketsByIDShipmentsByIDWithHttpInfo(basketId, shipmentId).then((response_and_data) => {
+            return response_and_data.data
+        })
     }
-
 
     /**
      * Gets a basket.
@@ -366,7 +360,6 @@ export default class BasketsApi {
             throw new Error('Missing the required parameter \'basketId\' when calling getBasketsByID')
         }
 
-
         const pathParams = {
             basket_id: basketId
         }
@@ -379,11 +372,7 @@ export default class BasketsApi {
         const accepts = ['application/json', 'text/xml', 'application/xml']
         const returnType = Basket
 
-        return this.apiClient.callApi(
-            '/baskets/{basket_id}', 'GET',
-            pathParams, queryParams, headerParams, formParams, postBody,
-            authNames, contentTypes, accepts, returnType
-        )
+        return this.apiClient.callApi('/baskets/{basket_id}', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType)
     }
 
     /**
@@ -392,12 +381,10 @@ export default class BasketsApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/Basket}
      */
     getBasketsByID(basketId) {
-        return this.getBasketsByIDWithHttpInfo(basketId)
-            .then((response_and_data) => {
-                return response_and_data.data
-            })
+        return this.getBasketsByIDWithHttpInfo(basketId).then((response_and_data) => {
+            return response_and_data.data
+        })
     }
-
 
     /**
      * Retrieves notes for a basket.
@@ -412,7 +399,6 @@ export default class BasketsApi {
             throw new Error('Missing the required parameter \'basketId\' when calling getBasketsByIDNotes')
         }
 
-
         const pathParams = {
             basket_id: basketId
         }
@@ -425,11 +411,7 @@ export default class BasketsApi {
         const accepts = ['application/json', 'text/xml', 'application/xml']
         const returnType = NotesResult
 
-        return this.apiClient.callApi(
-            '/baskets/{basket_id}/notes', 'GET',
-            pathParams, queryParams, headerParams, formParams, postBody,
-            authNames, contentTypes, accepts, returnType
-        )
+        return this.apiClient.callApi('/baskets/{basket_id}/notes', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType)
     }
 
     /**
@@ -438,12 +420,10 @@ export default class BasketsApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/NotesResult}
      */
     getBasketsByIDNotes(basketId) {
-        return this.getBasketsByIDNotesWithHttpInfo(basketId)
-            .then((response_and_data) => {
-                return response_and_data.data
-            })
+        return this.getBasketsByIDNotesWithHttpInfo(basketId).then((response_and_data) => {
+            return response_and_data.data
+        })
     }
-
 
     /**
      * Gets applicable payment methods for an existing basket considering the open payment amount only.
@@ -458,7 +438,6 @@ export default class BasketsApi {
             throw new Error('Missing the required parameter \'basketId\' when calling getBasketsByIDPaymentMethods')
         }
 
-
         const pathParams = {
             basket_id: basketId
         }
@@ -471,11 +450,7 @@ export default class BasketsApi {
         const accepts = ['application/json', 'text/xml', 'application/xml']
         const returnType = PaymentMethodResult
 
-        return this.apiClient.callApi(
-            '/baskets/{basket_id}/payment_methods', 'GET',
-            pathParams, queryParams, headerParams, formParams, postBody,
-            authNames, contentTypes, accepts, returnType
-        )
+        return this.apiClient.callApi('/baskets/{basket_id}/payment_methods', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType)
     }
 
     /**
@@ -484,12 +459,10 @@ export default class BasketsApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/PaymentMethodResult}
      */
     getBasketsByIDPaymentMethods(basketId) {
-        return this.getBasketsByIDPaymentMethodsWithHttpInfo(basketId)
-            .then((response_and_data) => {
-                return response_and_data.data
-            })
+        return this.getBasketsByIDPaymentMethodsWithHttpInfo(basketId).then((response_and_data) => {
+            return response_and_data.data
+        })
     }
-
 
     /**
      * Gets the applicable shipping methods for a certain shipment of a  basket.
@@ -510,7 +483,6 @@ export default class BasketsApi {
             throw new Error('Missing the required parameter \'shipmentId\' when calling getBasketsByIDShipmentsByIDShippingMethods')
         }
 
-
         const pathParams = {
             basket_id: basketId,
             shipment_id: shipmentId
@@ -525,9 +497,17 @@ export default class BasketsApi {
         const returnType = ShippingMethodResult
 
         return this.apiClient.callApi(
-            '/baskets/{basket_id}/shipments/{shipment_id}/shipping_methods', 'GET',
-            pathParams, queryParams, headerParams, formParams, postBody,
-            authNames, contentTypes, accepts, returnType
+            '/baskets/{basket_id}/shipments/{shipment_id}/shipping_methods',
+            'GET',
+            pathParams,
+            queryParams,
+            headerParams,
+            formParams,
+            postBody,
+            authNames,
+            contentTypes,
+            accepts,
+            returnType
         )
     }
 
@@ -538,12 +518,10 @@ export default class BasketsApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/ShippingMethodResult}
      */
     getBasketsByIDShipmentsByIDShippingMethods(basketId, shipmentId) {
-        return this.getBasketsByIDShipmentsByIDShippingMethodsWithHttpInfo(basketId, shipmentId)
-            .then((response_and_data) => {
-                return response_and_data.data
-            })
+        return this.getBasketsByIDShipmentsByIDShippingMethodsWithHttpInfo(basketId, shipmentId).then((response_and_data) => {
+            return response_and_data.data
+        })
     }
-
 
     /**
      * Updates a basket. Only the currency of the basket, source code, and the custom  properties of the basket and of the shipping items will be considered.
@@ -564,7 +542,6 @@ export default class BasketsApi {
             throw new Error('Missing the required parameter \'body\' when calling patchBasketsByID')
         }
 
-
         const pathParams = {
             basket_id: basketId
         }
@@ -577,11 +554,7 @@ export default class BasketsApi {
         const accepts = ['application/json', 'text/xml', 'application/xml']
         const returnType = Basket
 
-        return this.apiClient.callApi(
-            '/baskets/{basket_id}', 'PATCH',
-            pathParams, queryParams, headerParams, formParams, postBody,
-            authNames, contentTypes, accepts, returnType
-        )
+        return this.apiClient.callApi('/baskets/{basket_id}', 'PATCH', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType)
     }
 
     /**
@@ -591,12 +564,10 @@ export default class BasketsApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/Basket}
      */
     patchBasketsByID(basketId, body) {
-        return this.patchBasketsByIDWithHttpInfo(basketId, body)
-            .then((response_and_data) => {
-                return response_and_data.data
-            })
+        return this.patchBasketsByIDWithHttpInfo(basketId, body).then((response_and_data) => {
+            return response_and_data.data
+        })
     }
-
 
     /**
      * Updates an item in a basket.
@@ -637,7 +608,6 @@ export default class BasketsApi {
             throw new Error('Missing the required parameter \'body\' when calling patchBasketsByIDItemsByID')
         }
 
-
         const pathParams = {
             basket_id: basketId,
             item_id: itemId
@@ -651,11 +621,7 @@ export default class BasketsApi {
         const accepts = ['application/json', 'text/xml', 'application/xml']
         const returnType = Basket
 
-        return this.apiClient.callApi(
-            '/baskets/{basket_id}/items/{item_id}', 'PATCH',
-            pathParams, queryParams, headerParams, formParams, postBody,
-            authNames, contentTypes, accepts, returnType
-        )
+        return this.apiClient.callApi('/baskets/{basket_id}/items/{item_id}', 'PATCH', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType)
     }
 
     /**
@@ -679,12 +645,10 @@ export default class BasketsApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/Basket}
      */
     patchBasketsByIDItemsByID(basketId, itemId, body) {
-        return this.patchBasketsByIDItemsByIDWithHttpInfo(basketId, itemId, body)
-            .then((response_and_data) => {
-                return response_and_data.data
-            })
+        return this.patchBasketsByIDItemsByIDWithHttpInfo(basketId, itemId, body).then((response_and_data) => {
+            return response_and_data.data
+        })
     }
-
 
     /**
      * Updates a payment instrument of a basket.
@@ -715,7 +679,6 @@ export default class BasketsApi {
             throw new Error('Missing the required parameter \'body\' when calling patchBasketsByIDPaymentInstrumentsByID')
         }
 
-
         const pathParams = {
             basket_id: basketId,
             payment_instrument_id: paymentInstrumentId
@@ -730,9 +693,17 @@ export default class BasketsApi {
         const returnType = Basket
 
         return this.apiClient.callApi(
-            '/baskets/{basket_id}/payment_instruments/{payment_instrument_id}', 'PATCH',
-            pathParams, queryParams, headerParams, formParams, postBody,
-            authNames, contentTypes, accepts, returnType
+            '/baskets/{basket_id}/payment_instruments/{payment_instrument_id}',
+            'PATCH',
+            pathParams,
+            queryParams,
+            headerParams,
+            formParams,
+            postBody,
+            authNames,
+            contentTypes,
+            accepts,
+            returnType
         )
     }
 
@@ -747,12 +718,10 @@ export default class BasketsApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/Basket}
      */
     patchBasketsByIDPaymentInstrumentsByID(basketId, paymentInstrumentId, body) {
-        return this.patchBasketsByIDPaymentInstrumentsByIDWithHttpInfo(basketId, paymentInstrumentId, body)
-            .then((response_and_data) => {
-                return response_and_data.data
-            })
+        return this.patchBasketsByIDPaymentInstrumentsByIDWithHttpInfo(basketId, paymentInstrumentId, body).then((response_and_data) => {
+            return response_and_data.data
+        })
     }
-
 
     /**
      * Updates a shipment for a basket.
@@ -783,7 +752,6 @@ export default class BasketsApi {
             throw new Error('Missing the required parameter \'body\' when calling patchBasketsByIDShipmentsByID')
         }
 
-
         const pathParams = {
             basket_id: basketId,
             shipment_id: shipmentId
@@ -798,9 +766,17 @@ export default class BasketsApi {
         const returnType = Basket
 
         return this.apiClient.callApi(
-            '/baskets/{basket_id}/shipments/{shipment_id}', 'PATCH',
-            pathParams, queryParams, headerParams, formParams, postBody,
-            authNames, contentTypes, accepts, returnType
+            '/baskets/{basket_id}/shipments/{shipment_id}',
+            'PATCH',
+            pathParams,
+            queryParams,
+            headerParams,
+            formParams,
+            postBody,
+            authNames,
+            contentTypes,
+            accepts,
+            returnType
         )
     }
 
@@ -816,12 +792,10 @@ export default class BasketsApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/Basket}
      */
     patchBasketsByIDShipmentsByID(basketId, shipmentId, body) {
-        return this.patchBasketsByIDShipmentsByIDWithHttpInfo(basketId, shipmentId, body)
-            .then((response_and_data) => {
-                return response_and_data.data
-            })
+        return this.patchBasketsByIDShipmentsByIDWithHttpInfo(basketId, shipmentId, body).then((response_and_data) => {
+            return response_and_data.data
+        })
     }
-
 
     /**
      * Creates a new basket. The created basket is initialized with default values. Data provided in the body document
@@ -854,7 +828,6 @@ export default class BasketsApi {
         opts = opts || {}
         const postBody = opts.body
 
-
         const pathParams = {}
         const queryParams = {}
         const headerParams = {}
@@ -865,11 +838,7 @@ export default class BasketsApi {
         const accepts = ['application/json', 'text/xml', 'application/xml']
         const returnType = Basket
 
-        return this.apiClient.callApi(
-            '/baskets', 'POST',
-            pathParams, queryParams, headerParams, formParams, postBody,
-            authNames, contentTypes, accepts, returnType
-        )
+        return this.apiClient.callApi('/baskets', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType)
     }
 
     /**
@@ -899,12 +868,10 @@ export default class BasketsApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/Basket}
      */
     postBaskets(opts) {
-        return this.postBasketsWithHttpInfo(opts)
-            .then((response_and_data) => {
-                return response_and_data.data
-            })
+        return this.postBasketsWithHttpInfo(opts).then((response_and_data) => {
+            return response_and_data.data
+        })
     }
-
 
     /**
      * Adds a coupon to an existing basket.
@@ -925,7 +892,6 @@ export default class BasketsApi {
             throw new Error('Missing the required parameter \'body\' when calling postBasketsByIDCoupons')
         }
 
-
         const pathParams = {
             basket_id: basketId
         }
@@ -938,11 +904,7 @@ export default class BasketsApi {
         const accepts = ['application/json', 'text/xml', 'application/xml']
         const returnType = Basket
 
-        return this.apiClient.callApi(
-            '/baskets/{basket_id}/coupons', 'POST',
-            pathParams, queryParams, headerParams, formParams, postBody,
-            authNames, contentTypes, accepts, returnType
-        )
+        return this.apiClient.callApi('/baskets/{basket_id}/coupons', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType)
     }
 
     /**
@@ -952,12 +914,10 @@ export default class BasketsApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/Basket}
      */
     postBasketsByIDCoupons(basketId, body) {
-        return this.postBasketsByIDCouponsWithHttpInfo(basketId, body)
-            .then((response_and_data) => {
-                return response_and_data.data
-            })
+        return this.postBasketsByIDCouponsWithHttpInfo(basketId, body).then((response_and_data) => {
+            return response_and_data.data
+        })
     }
-
 
     /**
      * Adds a gift certificate item to an existing basket.
@@ -978,7 +938,6 @@ export default class BasketsApi {
             throw new Error('Missing the required parameter \'body\' when calling postBasketsByIDGiftCertificateItems')
         }
 
-
         const pathParams = {
             basket_id: basketId
         }
@@ -991,11 +950,7 @@ export default class BasketsApi {
         const accepts = ['application/json', 'text/xml', 'application/xml']
         const returnType = Basket
 
-        return this.apiClient.callApi(
-            '/baskets/{basket_id}/gift_certificate_items', 'POST',
-            pathParams, queryParams, headerParams, formParams, postBody,
-            authNames, contentTypes, accepts, returnType
-        )
+        return this.apiClient.callApi('/baskets/{basket_id}/gift_certificate_items', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType)
     }
 
     /**
@@ -1005,12 +960,10 @@ export default class BasketsApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/Basket}
      */
     postBasketsByIDGiftCertificateItems(basketId, body) {
-        return this.postBasketsByIDGiftCertificateItemsWithHttpInfo(basketId, body)
-            .then((response_and_data) => {
-                return response_and_data.data
-            })
+        return this.postBasketsByIDGiftCertificateItemsWithHttpInfo(basketId, body).then((response_and_data) => {
+            return response_and_data.data
+        })
     }
-
 
     /**
      * Adds new items to a basket.
@@ -1052,7 +1005,6 @@ export default class BasketsApi {
             throw new Error('Missing the required parameter \'body\' when calling postBasketsByIDItems')
         }
 
-
         const pathParams = {
             basket_id: basketId
         }
@@ -1065,11 +1017,7 @@ export default class BasketsApi {
         const accepts = ['application/json', 'text/xml', 'application/xml']
         const returnType = Basket
 
-        return this.apiClient.callApi(
-            '/baskets/{basket_id}/items', 'POST',
-            pathParams, queryParams, headerParams, formParams, postBody,
-            authNames, contentTypes, accepts, returnType
-        )
+        return this.apiClient.callApi('/baskets/{basket_id}/items', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType)
     }
 
     /**
@@ -1099,12 +1047,10 @@ export default class BasketsApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/Basket}
      */
     postBasketsByIDItems(basketId, body) {
-        return this.postBasketsByIDItemsWithHttpInfo(basketId, body)
-            .then((response_and_data) => {
-                return response_and_data.data
-            })
+        return this.postBasketsByIDItemsWithHttpInfo(basketId, body).then((response_and_data) => {
+            return response_and_data.data
+        })
     }
-
 
     /**
      * Adds a note to an existing basket.
@@ -1125,7 +1071,6 @@ export default class BasketsApi {
             throw new Error('Missing the required parameter \'body\' when calling postBasketsByIDNotes')
         }
 
-
         const pathParams = {
             basket_id: basketId
         }
@@ -1138,11 +1083,7 @@ export default class BasketsApi {
         const accepts = ['application/json', 'text/xml', 'application/xml']
         const returnType = Basket
 
-        return this.apiClient.callApi(
-            '/baskets/{basket_id}/notes', 'POST',
-            pathParams, queryParams, headerParams, formParams, postBody,
-            authNames, contentTypes, accepts, returnType
-        )
+        return this.apiClient.callApi('/baskets/{basket_id}/notes', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType)
     }
 
     /**
@@ -1152,12 +1093,10 @@ export default class BasketsApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/Basket}
      */
     postBasketsByIDNotes(basketId, body) {
-        return this.postBasketsByIDNotesWithHttpInfo(basketId, body)
-            .then((response_and_data) => {
-                return response_and_data.data
-            })
+        return this.postBasketsByIDNotesWithHttpInfo(basketId, body).then((response_and_data) => {
+            return response_and_data.data
+        })
     }
-
 
     /**
      * Adds a payment instrument to a basket.
@@ -1182,7 +1121,6 @@ export default class BasketsApi {
             throw new Error('Missing the required parameter \'body\' when calling postBasketsByIDPaymentInstruments')
         }
 
-
         const pathParams = {
             basket_id: basketId
         }
@@ -1195,11 +1133,7 @@ export default class BasketsApi {
         const accepts = ['application/json', 'text/xml', 'application/xml']
         const returnType = Basket
 
-        return this.apiClient.callApi(
-            '/baskets/{basket_id}/payment_instruments', 'POST',
-            pathParams, queryParams, headerParams, formParams, postBody,
-            authNames, contentTypes, accepts, returnType
-        )
+        return this.apiClient.callApi('/baskets/{basket_id}/payment_instruments', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType)
     }
 
     /**
@@ -1214,12 +1148,10 @@ export default class BasketsApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/Basket}
      */
     postBasketsByIDPaymentInstruments(basketId, body) {
-        return this.postBasketsByIDPaymentInstrumentsWithHttpInfo(basketId, body)
-            .then((response_and_data) => {
-                return response_and_data.data
-            })
+        return this.postBasketsByIDPaymentInstrumentsWithHttpInfo(basketId, body).then((response_and_data) => {
+            return response_and_data.data
+        })
     }
-
 
     /**
      * Creates a new shipment for a basket.
@@ -1249,7 +1181,6 @@ export default class BasketsApi {
             throw new Error('Missing the required parameter \'body\' when calling postBasketsByIDShipments')
         }
 
-
         const pathParams = {
             basket_id: basketId
         }
@@ -1262,11 +1193,7 @@ export default class BasketsApi {
         const accepts = ['application/json', 'text/xml', 'application/xml']
         const returnType = Basket
 
-        return this.apiClient.callApi(
-            '/baskets/{basket_id}/shipments', 'POST',
-            pathParams, queryParams, headerParams, formParams, postBody,
-            authNames, contentTypes, accepts, returnType
-        )
+        return this.apiClient.callApi('/baskets/{basket_id}/shipments', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType)
     }
 
     /**
@@ -1285,12 +1212,10 @@ export default class BasketsApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/Basket}
      */
     postBasketsByIDShipments(basketId, body) {
-        return this.postBasketsByIDShipmentsWithHttpInfo(basketId, body)
-            .then((response_and_data) => {
-                return response_and_data.data
-            })
+        return this.postBasketsByIDShipmentsWithHttpInfo(basketId, body).then((response_and_data) => {
+            return response_and_data.data
+        })
     }
-
 
     /**
      * Sets the billing address of a basket.
@@ -1310,13 +1235,13 @@ export default class BasketsApi {
             throw new Error('Missing the required parameter \'basketId\' when calling putBasketsByIDBillingAddress')
         }
 
-
         const pathParams = {
             basket_id: basketId
         }
         const queryParams = {
             use_as_shipping: opts.useAsShipping,
-            customer_address_id: opts.customerAddressId
+            customer_address_id: opts.customerAddressId,
+            method: 'PUT'
         }
         const headerParams = {}
         const formParams = {}
@@ -1326,11 +1251,7 @@ export default class BasketsApi {
         const accepts = ['application/json', 'text/xml', 'application/xml']
         const returnType = Basket
 
-        return this.apiClient.callApi(
-            '/baskets/{basket_id}/billing_address', 'PUT',
-            pathParams, queryParams, headerParams, formParams, postBody,
-            authNames, contentTypes, accepts, returnType
-        )
+        return this.apiClient.callApi('/baskets/{basket_id}/billing_address', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType)
     }
 
     /**
@@ -1343,12 +1264,10 @@ export default class BasketsApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/Basket}
      */
     putBasketsByIDBillingAddress(basketId, opts) {
-        return this.putBasketsByIDBillingAddressWithHttpInfo(basketId, opts)
-            .then((response_and_data) => {
-                return response_and_data.data
-            })
+        return this.putBasketsByIDBillingAddressWithHttpInfo(basketId, opts).then((response_and_data) => {
+            return response_and_data.data
+        })
     }
-
 
     /**
      * Sets customer information for an existing basket.
@@ -1369,11 +1288,12 @@ export default class BasketsApi {
             throw new Error('Missing the required parameter \'body\' when calling putBasketsByIDCustomer')
         }
 
-
         const pathParams = {
             basket_id: basketId
         }
-        const queryParams = {}
+        const queryParams = {
+            method: 'PUT'
+        }
         const headerParams = {}
         const formParams = {}
 
@@ -1382,11 +1302,7 @@ export default class BasketsApi {
         const accepts = ['application/json', 'text/xml', 'application/xml']
         const returnType = Basket
 
-        return this.apiClient.callApi(
-            '/baskets/{basket_id}/customer', 'PUT',
-            pathParams, queryParams, headerParams, formParams, postBody,
-            authNames, contentTypes, accepts, returnType
-        )
+        return this.apiClient.callApi('/baskets/{basket_id}/customer', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType)
     }
 
     /**
@@ -1396,12 +1312,10 @@ export default class BasketsApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/Basket}
      */
     putBasketsByIDCustomer(basketId, body) {
-        return this.putBasketsByIDCustomerWithHttpInfo(basketId, body)
-            .then((response_and_data) => {
-                return response_and_data.data
-            })
+        return this.putBasketsByIDCustomerWithHttpInfo(basketId, body).then((response_and_data) => {
+            return response_and_data.data
+        })
     }
-
 
     /**
      * Sets a shipping address of a specific shipment of a basket.
@@ -1432,14 +1346,14 @@ export default class BasketsApi {
             throw new Error('Missing the required parameter \'body\' when calling putBasketsByIDShipmentsByIDShippingAddress')
         }
 
-
         const pathParams = {
             basket_id: basketId,
             shipment_id: shipmentId
         }
         const queryParams = {
             use_as_billing: opts.useAsBilling,
-            customer_address_id: opts.customerAddressId
+            customer_address_id: opts.customerAddressId,
+            method: 'PUT'
         }
         const headerParams = {}
         const formParams = {}
@@ -1450,9 +1364,17 @@ export default class BasketsApi {
         const returnType = Basket
 
         return this.apiClient.callApi(
-            '/baskets/{basket_id}/shipments/{shipment_id}/shipping_address', 'PUT',
-            pathParams, queryParams, headerParams, formParams, postBody,
-            authNames, contentTypes, accepts, returnType
+            '/baskets/{basket_id}/shipments/{shipment_id}/shipping_address',
+            'POST',
+            pathParams,
+            queryParams,
+            headerParams,
+            formParams,
+            postBody,
+            authNames,
+            contentTypes,
+            accepts,
+            returnType
         )
     }
 
@@ -1467,12 +1389,10 @@ export default class BasketsApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/Basket}
      */
     putBasketsByIDShipmentsByIDShippingAddress(basketId, shipmentId, body, opts) {
-        return this.putBasketsByIDShipmentsByIDShippingAddressWithHttpInfo(basketId, shipmentId, body, opts)
-            .then((response_and_data) => {
-                return response_and_data.data
-            })
+        return this.putBasketsByIDShipmentsByIDShippingAddressWithHttpInfo(basketId, shipmentId, body, opts).then((response_and_data) => {
+            return response_and_data.data
+        })
     }
-
 
     /**
      * Sets a shipping method to a specific shipment of a basket.
@@ -1499,12 +1419,13 @@ export default class BasketsApi {
             throw new Error('Missing the required parameter \'body\' when calling putBasketsByIDShipmentsByIDShippingMethod')
         }
 
-
         const pathParams = {
             basket_id: basketId,
             shipment_id: shipmentId
         }
-        const queryParams = {}
+        const queryParams = {
+            method: 'PUT'
+        }
         const headerParams = {}
         const formParams = {}
 
@@ -1514,9 +1435,17 @@ export default class BasketsApi {
         const returnType = Basket
 
         return this.apiClient.callApi(
-            '/baskets/{basket_id}/shipments/{shipment_id}/shipping_method', 'PUT',
-            pathParams, queryParams, headerParams, formParams, postBody,
-            authNames, contentTypes, accepts, returnType
+            '/baskets/{basket_id}/shipments/{shipment_id}/shipping_method',
+            'POST',
+            pathParams,
+            queryParams,
+            headerParams,
+            formParams,
+            postBody,
+            authNames,
+            contentTypes,
+            accepts,
+            returnType
         )
     }
 
@@ -1528,11 +1457,8 @@ export default class BasketsApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/Basket}
      */
     putBasketsByIDShipmentsByIDShippingMethod(basketId, shipmentId, body) {
-        return this.putBasketsByIDShipmentsByIDShippingMethodWithHttpInfo(basketId, shipmentId, body)
-            .then((response_and_data) => {
-                return response_and_data.data
-            })
+        return this.putBasketsByIDShipmentsByIDShippingMethodWithHttpInfo(basketId, shipmentId, body).then((response_and_data) => {
+            return response_and_data.data
+        })
     }
-
-
 }
